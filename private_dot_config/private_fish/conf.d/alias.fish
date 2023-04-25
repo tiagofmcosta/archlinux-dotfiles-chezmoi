@@ -4,7 +4,7 @@ alias lg lazygit
 alias e nvim
 alias cm chezmoi
 alias cm-preview 'cm -vn apply'
-alias cm-edit 'cm --apply edit'
+alias cm-edit 'cm edit --apply'
 alias ls exa
 alias la 'll -a'
 alias cl 'clear && printf "\033[3J"'

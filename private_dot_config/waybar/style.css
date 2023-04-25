@@ -1,0 +1,178 @@
+@import "mocha.css";
+
+* {
+  /* `otf-font-awesome` is required to be installed for icons */
+  font-family: 'Noto Sans', 'Font Awesome 6 Free', 'Font Awesome 6 Brands', 'JetBrainsMono Nerd Font';
+  font-size: 14px;
+  border: none;
+  border-radius: 0;
+  min-height: 0;
+}
+
+window#waybar {
+  background-color: transparent;
+  color: @text;
+}
+
+button {
+  /* Use box-shadow instead of border so the text isn't offset */
+  box-shadow: inset 0 -3px transparent;
+  /* Avoid rounded borders under each button name */
+}
+
+/* https://github.com/Alexays/Waybar/wiki/FAQ#the-workspace-buttons-have-a-strange-hover-effect */
+button:hover {
+  background: inherit;
+}
+
+#workspaces button {
+  padding: 5px 10px;
+  border-radius: 8px;
+  margin: 2px;
+}
+
+#workspaces button:hover {
+  background-color: @crust;
+}
+
+#workspaces button.active {
+  background-color: @text;
+  color: @base;
+  /* border: 1px solid @crust; */
+}
+
+#workspaces button.urgent {
+}
+
+#mode {
+}
+
+#clock,
+#cpu,
+#memory,
+#disk,
+#temperature,
+#network,
+#custom-media,
+#tray,
+#idle_inhibitor,
+#mode,
+#window,
+#custom-power,
+#custom-wallpaper,
+#custom-updates {
+  background-color: alpha(@base, 0.7);
+  padding: 0px 10px;
+  border-radius: 10px;
+  border: 1px solid @crust;
+}
+
+.modules-left,
+.modules-center,
+.modules-right {
+    margin-top: 10px;
+}
+
+.modules-left:first-child {
+    margin-left: 10px;
+}
+
+.modules-right:last-child {
+    margin-right: 10px;
+}
+
+#workspaces {
+  border-radius: 10px;
+  background-color: alpha(@base, 0.7);
+  border: 1px solid @crust;
+}
+
+#window {
+  background-color: transparent;
+  margin-left: 5px;
+  border: none;
+  text-shadow: 1px 1px 2px @crust;
+}
+
+@keyframes blink {
+  to {
+    color: @surface0;
+  }
+}
+
+label:focus {
+}
+
+#tray {
+}
+
+#tray > .passive {
+  -gtk-icon-effect: dim;
+}
+
+#tray > .needs-attention {
+  -gtk-icon-effect: highlight;
+}
+
+#idle_inhibitor {
+    margin-left: 5px;
+}
+
+#idle_inhibitor.activated {
+  background-color: @text;
+  color: @base;
+}
+
+#network {
+    margin-left: 5px;
+}
+
+#network.disconnected {
+}
+
+#cpu {
+    margin-left: 5px;
+    border-right: none;
+    border-top-right-radius: 0px;
+    border-bottom-right-radius: 0px;
+}
+
+#memory {
+    border-left: none;
+    border-right: none;
+    border-radius: 0px;
+}
+
+#disk {
+}
+
+#temperature {
+    border-left: none;
+    border-top-left-radius: 0px;
+    border-bottom-left-radius: 0px;
+}
+
+#temperature.critical {
+    background-color: @red;
+}
+
+#custom-wallpaper {
+    margin-left: 5px;
+}
+
+#custom-updates {
+    margin-left: 5px;
+}
+
+#clock {
+    margin-left: 5px;
+}
+
+#custom-power {
+    margin-left: 5px;
+}
+
+#custom-power button:hover {
+  background-color: @text;
+  color: @base;
+}
